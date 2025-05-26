@@ -1,0 +1,18 @@
+.data
+A:.word 0,0,0,0,0,0,0,0,0
+
+.text
+LDR R0,=A
+MOV R1,#0;i=0
+MOV R2,#0;j=0
+MOV R7,#3
+MOV R9,#1
+LOOP:
+	MLA R5,R1,R7,R2
+	STR R9,[R0,R5]
+	ADD R9,R9,#1
+	ADD R1,R1,#1
+	ADD R2,R2,#1
+	CMP R9,#10
+	BNE LOOP
+EXIT:SWI 0X011

@@ -1,0 +1,3 @@
+MOV R1,#16
+RSB R2,R1,R1,LSL#5
+.end
